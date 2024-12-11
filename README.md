@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Finances Web App
 
-## Getting Started
+A personal finance management application built with **Next.js**, **React**, and **Tailwind CSS**. This app allows users to track their accounts, manage transactions, and view an overview of their finances. It includes features for adding, editing, and deleting accounts and transactions, along with an optional dummy data generator for testing purposes.
 
-First, run the development server:
+---
+
+## **Features**
+
+### 1. **Dashboard**
+- Displays an overview of total account balances.
+- Shows the total number of transactions.
+- Highlights the most recent transactions.
+
+### 2. **Accounts Management**
+- Add, edit, and delete accounts.
+- View a list of accounts with their current balances.
+
+### 3. **Transactions Management**
+- Add, edit, and delete transactions linked to specific accounts.
+- Filter and view recent transactions.
+
+### 4. **Dummy Data Generator**
+- If local storage is empty, the app detects the test user and prompts to load dummy data.
+- Randomly generates accounts and transactions for testing.
+
+---
+
+## **Technologies Used**
+
+- **Next.js**: For server-rendered and statically generated pages.
+- **React**: For building UI components.
+- **Tailwind CSS**: For styling and responsive design.
+- **Local Storage**: To persist user data locally.
+
+---
+
+## **Getting Started**
+
+### **1. Prerequisites**
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16+)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### **2. Installation**
+
+Clone the repository and install dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/personal-finances-web-app.git
+
+# Navigate into the project directory
+cd personal-finances-web-app
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+### **3. Run the Development Server**
+
+Start the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Project Structure**
 
-## Learn More
+```
+app/
+  accounts/
+    page.tsx      # Accounts page
+  dashboard/
+    page.tsx      # Dashboard page
+  transactions/
+    page.tsx      # Transactions page
+components/
+  Layout.tsx      # Main layout with sidebar and top bar
+  Modal.tsx       # Reusable modal component
+utils/
+  dummyData.ts    # Utility to generate random accounts and transactions
+  storage.ts      # Local storage helper functions
+  types.ts        # Shared TypeScript types
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## **Key Files and Folders**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **`components/`**
+Contains reusable UI components:
+- **`Layout.tsx`**: Handles the sidebar, top bar, and main content layout.
+- **`Modal.tsx`**: A reusable modal component for user prompts.
 
-## Deploy on Vercel
+### **`utils/`**
+Contains utility functions and shared types:
+- **`dummyData.ts`**: Generates random accounts and transactions for testing.
+- **`storage.ts`**: Helper functions for interacting with local storage.
+- **`types.ts`**: Shared TypeScript interfaces for `Account` and `Transaction` objects.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **`app/`**
+Contains the main application pages:
+- **`dashboard/`**: Displays the dashboard overview.
+- **`accounts/`**: Manages user accounts.
+- **`transactions/`**: Manages user transactions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **Usage**
+
+### **Dummy Data Generation**
+- If no accounts or transactions are found in local storage, the app prompts the user to load dummy data for testing.
+- Dummy data includes:
+  - Randomly named accounts with random balances.
+  - Random transactions associated with accounts.
+
+### **Accounts Page**
+- Add accounts by providing a name and initial balance.
+- Edit or delete existing accounts.
+
+### **Transactions Page**
+- Add transactions by selecting an account, entering a description, and specifying an amount.
+- Edit or delete existing transactions.
+
+### **Dashboard**
+- View a summary of total balances, transaction counts, and recent transactions.
+
+---
+
+## **Future Enhancements**
+
+1. **Backend API Integration**:
+   - Replace local storage with API calls for better scalability.
+   - Add user authentication and multi-user support.
+
+2. **Analytics and Reports**:
+   - Visualize spending trends with charts and graphs.
+   - Add budgeting and financial goal tracking.
+
+3. **Responsive Enhancements**:
+   - Optimize UI for tablets and smaller screens.
+
+4. **Export and Import**:
+   - Allow users to export and import accounts and transactions as CSV files.
+
+---
+
+## **Contributing**
+
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push to your branch.
+4. Submit a pull request.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License.
+
+---
+
+## **Contact**
+For questions or suggestions, feel free to reach out:
+- **Email**: mauricio.lombano@gmail.com.com
+- **GitHub**: [MauLom](https://github.com/MauLom)
+

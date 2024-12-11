@@ -1,4 +1,6 @@
-export const saveToLocalStorage = (key: string, value: any) => {
+import { Account, Transaction } from "./types";
+
+export const saveToLocalStorage = (key: string, value:  Account[] | Transaction[] | string | number | boolean | undefined) => {
     localStorage.setItem(key, JSON.stringify(value));
   };
   

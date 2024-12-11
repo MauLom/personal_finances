@@ -8,10 +8,8 @@ export default function Transactions() {
   const [transactions, setTransactions] = useState<Transaction[]>(
     () => getFromLocalStorage("transactions") || []
   );
+  const accounts = getFromLocalStorage("accounts") || [];
 
-  const [accounts, setAccounts] = useState<Account[]>(
-    () => getFromLocalStorage("accounts") || []
-  );
 
   const [formData, setFormData] = useState<Transaction>({
     id: 0,
@@ -70,7 +68,7 @@ export default function Transactions() {
             }
             className="p-2 border rounded flex-1"
           >
-            {accounts.map((account) => (
+            {accounts.map((account: Account) => (
               <option key={account.id} value={account.id}>
                 {account.name}
               </option>
@@ -107,7 +105,7 @@ export default function Transactions() {
       </div>
       <ul className="divide-y">
         {transactions.map((transaction) => {
-          const account = accounts.find((a) => a.id === transaction.accountId);
+          const account = accounts.find((a:Account) => a.id === transaction.accountId);
           return (
             <li key={transaction.id} className="py-2 flex justify-between">
               <div>
